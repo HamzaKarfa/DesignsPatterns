@@ -2,11 +2,10 @@
 
 namespace App\Factories;
 
-use App\Entities\AdditionCalculation;
-use App\Entities\SoustractionCalculation;
-use App\Interfaces\InterfaceCalculation;
 use App\Factories\AdditionFactory;
 use App\Factories\SoustractionFactory;
+use App\Factories\MultiplicationFactory;
+use App\Interfaces\InterfaceOperationFactoryChild;
 use Exception;
 
 class OperationFactory {
@@ -17,7 +16,7 @@ class OperationFactory {
         $this->type = $type;
     }
     
-    public function createFactory()
+    public function createFactory():InterfaceOperationFactoryChild
     {
         // $factoryName = "App\Factories\\" .ucfirst(strtolower($this->type))."Factory";
         // if (!class_exists($factoryName)) {
