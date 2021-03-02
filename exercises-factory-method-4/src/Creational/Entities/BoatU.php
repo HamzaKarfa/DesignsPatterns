@@ -9,5 +9,5 @@ class BoatU  extends AbstractBoat {
 
     protected $damage = 30;
     protected $description = 'a big ufo enemy ship';
-
+ 
 }

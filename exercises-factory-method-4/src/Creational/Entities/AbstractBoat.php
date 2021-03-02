@@ -9,9 +9,9 @@ Abstract class AbstractBoat{
     protected $damage;
     protected $description;
 
+     
     public function sendDamage(HeroInterface $heroShip){
         $heroShip->receiveDamage($this->getDamage());
-        return $heroShip->getLife();
     }
 
     public function getDamage(){

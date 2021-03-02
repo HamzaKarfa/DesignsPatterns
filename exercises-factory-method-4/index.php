@@ -5,11 +5,10 @@ require 'vendor/autoload.php';
     use Patterns\Creational\Factories\DirectorBoatFactory;
 
 
-if(isset($_POST['remainingPointsHeroShip'])) {
-    if($_POST['remainingPointsHeroShip'] != ''){
+if(isset($_POST['remainingPointsHeroShip']) && !empty($_POST['remainingPointsHeroShip'])) {
+
         $heroShipPoints = $_POST['remainingPointsHeroShip'];
-    }
-    
+
 }else{
     $heroShipPoints = 200;
 }
@@ -42,7 +41,14 @@ if(isset($_POST['ship'])){
         <?php endif; ?>
         </p>
         <p>
-            You still have <?= $hero->getLife() ?>
+           <?php 
+            if(intval($hero->getLife()) > 0){
+                echo 'You still have' .$hero->getLife();
+            }else{
+                unset($hero);
+                echo 'You\'re Dead';
+            } 
+             ?>
         </p>
     </body>
 </html>

@@ -14,4 +14,3 @@
 
 ## all folders contains one phpUnit test (use with composer : ./vendor/bin/phpunit)
 ## all folders exercices need composer install
-
